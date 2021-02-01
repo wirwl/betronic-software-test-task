@@ -1,0 +1,26 @@
+.title {
+  display: flex;
+  align-items: center;
+
+  &__text {
+    font-size: 34px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    &__image {
+      animation: app-logo-float infinite 3s ease-in-out;
+    }
+  }
+
+  @keyframes app-logo-float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(4px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}

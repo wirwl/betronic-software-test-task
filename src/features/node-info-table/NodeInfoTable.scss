@@ -1,0 +1,24 @@
+.node-info-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  &__items {
+    display: flex;
+    margin-right: 20px;
+    padding-bottom: 5px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+
+  &__header {
+    font-weight: bold;
+  }
+}

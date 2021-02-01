@@ -1,0 +1,10 @@
+.app {
+  margin: 5px;
+  &__main-content {
+    margin: 0 auto;
+  }
+
+  &__item {
+    margin-bottom: 20px;
+  }
+}

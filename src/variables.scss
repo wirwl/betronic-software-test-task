@@ -1,0 +1,27 @@
+$foreground-color-default: #fff;
+$background-color-default: #e06666;
+$background-color-default-darken6: darken($background-color-default, 6%);
+$background-color-default-darken12: darken($background-color-default, 12%);
+$color-vkontakte: #3987f5;
+$color-vkontakte-darken6: darken($color-vkontakte, 6%);
+$color-vkontakte-darken12: darken($color-vkontakte, 12%);
+$color-whatsapp: #1ebea5;
+$color-whatsapp-darken6: darken($color-whatsapp, 6%);
+$color-whatsapp-darken12: darken($color-whatsapp, 12%);
+$color-gitlab: #554488;
+$color-gitlab-darken6: darken($color-gitlab, 6%);
+$color-gitlab-darken12: darken($color-gitlab, 12%);
+$color-button-disabled: #6c757d;
+
+$fonts: "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+@mixin button-states($colorHover, $colorActive) {
+  &:hover:not(.button_disabled) {
+    background-color: $colorHover;
+  }
+
+  &:active:not(.button_disabled),
+  &:focus:not(.button_disabled) {
+    background-color: $colorActive;
+  }
+}

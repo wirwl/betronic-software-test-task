@@ -1,0 +1,9 @@
+.child-nodes-list {
+  &__items {
+    list-style: none;
+  }
+
+  &__empty {
+    color: gray;
+  }
+}

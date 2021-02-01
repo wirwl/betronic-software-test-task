@@ -1,0 +1,46 @@
+@import "../../variables.scss";
+
+.button {
+  display: inline-block;
+  padding: 5px 10px;
+  color: $foreground-color-default;
+  background: $background-color-default;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-family: $fonts;
+  cursor: pointer;
+  text-align: center;
+  word-wrap: none;
+
+  &:hover:not(.button_disabled) {
+    background-color: $background-color-default-darken6;
+  }
+
+  &:active:not(.button_disabled),
+  &:focus:not(.button_disabled) {
+    background-color: $background-color-default-darken12;
+  }
+
+  &_theme_vkontakte {
+    background-color: $color-vkontakte;
+    @include button-states($color-vkontakte-darken6, $color-vkontakte-darken12);
+  }
+
+  &_theme_whatsapp {
+    background-color: $color-whatsapp;
+    @include button-states($color-whatsapp-darken6, $color-whatsapp-darken12);
+  }
+
+  &_theme_gitlab {
+    background-color: $color-gitlab;
+    @include button-states($color-gitlab-darken6, $color-gitlab-darken12);
+  }
+
+  &_disabled {
+    background-color: $color-button-disabled;
+    cursor: not-allowed;
+    user-select: none;
+  }
+}
