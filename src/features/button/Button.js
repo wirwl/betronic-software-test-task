@@ -16,8 +16,7 @@ export default function Button(props) {
   } = props;
 
   const themeClass = getTheme(theme);
-  const classes = b({ disabled: isDisabled, theme: themeClass });
-  const href = link;
+  const classes = b({ disabled: isDisabled, theme: themeClass });  
 
   return (
     isSubmitButton || isDisabled ?
@@ -29,7 +28,7 @@ export default function Button(props) {
       </button> :    
       <Link
         className={classes}
-        to={href}
+        to={link}
         onClick={onClick}>
         {props.text}
       </Link>      
