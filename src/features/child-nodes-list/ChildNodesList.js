@@ -6,6 +6,11 @@ const b = block('child-nodes-list');
 
 export default function ChildNodesList(props) {
   const { title = 'List of child nodes', items, fullRoute } = props;
+
+  const handleLinkClick = (e) => {        
+    document.getElementById('addNodeForm').reset();    
+  }
+
   return (
     <div className={b()}>
       <h3 className={b('title')}>{title}</h3>
@@ -14,7 +19,7 @@ export default function ChildNodesList(props) {
           const route = fullRoute === '/' ? item.route : fullRoute + item.route;
           return (
             <li className={b('item')} key={index}>
-              <Link className={b('link')} to={route}>{item.title}</Link>
+              <Link className={b('link')} to={route} onClick={handleLinkClick}>{item.title}</Link>
             </li>
           );
         }) : <li className={b('empty')}>&gt;empty&lt;</li>

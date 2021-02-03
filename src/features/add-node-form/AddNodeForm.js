@@ -80,7 +80,7 @@ export default function AddNodeForm(props) {
   }
 
   return (
-    <form className={b({ theme: themeClass })} onSubmit={handleAddNodeFormSubmit}>
+    <form className={b({ theme: themeClass })} id="addNodeForm" onSubmit={handleAddNodeFormSubmit}>
       <label className={b('route')}>
         <span className={b('caption')}>Route</span>
         <input className={b('route-input')} onChange={handleRouteInputChange} type='text' placeholder='type node route' />
