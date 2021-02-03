@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { deepCopy } from './utils';
-import { initialReduxState } from './defaults'
+import { initialReduxStateForTesting } from './defaults'
 
 let initialState = sessionStorage.getItem('app');
-initialState = initialState ? JSON.parse(initialState) : initialReduxState;
+initialState = initialState ? JSON.parse(initialState) : initialReduxStateForTesting;
 
 export const appSlice = createSlice({
   name: 'app',

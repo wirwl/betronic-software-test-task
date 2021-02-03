@@ -2,37 +2,36 @@ import React from 'react';
 import './Button.scss';
 import block from 'bem-cn';
 import { getTheme } from '../../theme';
+import { Link } from 'react-router-dom';
 
 const b = block('button');
 
 export default function Button(props) {
-  const {
-    type = "button",
+  const {    
     link,
     onClick,
     isDisabled = false,
-    theme
+    theme,
+    isSubmitButton = false
   } = props;
 
   const themeClass = getTheme(theme);
   const classes = b({ disabled: isDisabled, theme: themeClass });
-  const href = isDisabled ? undefined : link;
+  const href = link;
 
   return (
-    link ?
-      <a
-        className={classes}
-        href={href}
-        onClick={onClick}>
-        {props.text}
-      </a>
-      :
+    isSubmitButton || isDisabled ?
       <button
-        className={classes}
-        type={type}
+        className={classes}        
         disabled={isDisabled}
         onClick={onClick}>
         {props.text}
-      </button>
+      </button> :    
+      <Link
+        className={classes}
+        to={href}
+        onClick={onClick}>
+        {props.text}
+      </Link>      
   );
 }

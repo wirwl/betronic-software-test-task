@@ -92,7 +92,7 @@ export default function AddNodeForm(props) {
       </label>
       <div className={b('error-already-exists', { show: isRouteAlreadyExists })}>{'This route already exists!'}</div>
       <div className={b('submit-button')}>
-        <Button theme={theme} isDisabled={isButtonDisabled} type="submit" text={'Add new node'} />
+        <Button isSubmitButton={true} theme={theme} isDisabled={isButtonDisabled} type="submit" text={'Add new node'} />
       </div>
     </form>
   );
