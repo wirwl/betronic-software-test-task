@@ -62,7 +62,8 @@ export default function AddNodeForm(props) {
           title: createdTitle
         }
       }));
-    } else { setIsRouteAlreadyExists(true); e.preventDefault(); }
+    } else { setIsRouteAlreadyExists(true);}
+    e.preventDefault();    
   }
 
   const handleRouteInputChange = (e) => {
@@ -72,7 +73,7 @@ export default function AddNodeForm(props) {
       setIsButtonDisabled(false);
     } else setIsButtonDisabled(true);
     if (isRouteAlreadyExists)
-      setIsRouteAlreadyExists(false);
+      setIsRouteAlreadyExists(false);    
   }
 
   const handleTitleInputChange = (e) => {
@@ -80,7 +81,7 @@ export default function AddNodeForm(props) {
   }
 
   return (
-    <form className={b({ theme: themeClass })} id="addNodeForm" onSubmit={handleAddNodeFormSubmit}>
+    <form method={'get'} className={b({ theme: themeClass })} id="addNodeForm" onSubmit={handleAddNodeFormSubmit}>
       <label className={b('route')}>
         <span className={b('caption')}>Route</span>
         <input className={b('route-input')} onChange={handleRouteInputChange} type='text' placeholder='type node route' />
