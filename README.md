@@ -1,63 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+Посмотреть результат: http://betronic-software-test-task.wirwl.vercel.app
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Задание: необходимо реализовать приложение, представляющее из себя роутинг, построенный на основе дерева. Изначально дерево имеет только корень: { route: ‘/main’, nodes: [], title: ‘Main’  }. Все дерево нужно хранить в редаксе.
+В дерево можно добавлять узлы и удалять их. Находясь на конкретном узле пользователь имеет возможность добавить узлы, для этого он заполняет форму с полями: route, title. После заполнения формы пользователь ее сабмитит (submit) и новый узел добавляется под текущий.
+Каждый роут приложения по сути представляет из себя визуализацию узла дерева, на странице есть: 
+Title. Находится в хедере
+Кнопка “Перейти к родительскому узлу”. Находится в хедере
+Таблица узлов (на флексах или гридах) в формате route - title - amount nodes - кнопка удаления узла. Находится в основном контенте сайта
+Форма добавления нового узла. Находится в основном контенте сайта
+Список ссылок на дочерние узлы (Link-и), при нажатии на которые пользователь переходит на данный роут (узел)
+Если у текущего узла 0 дочерних узлов, то страница оформлена в цветах ВК, если 1, то в цветах Ватсапа, если 2 и больше, то в цветах гитлаба
+Дерево должно сохраняться даже после перезагрузки страницы
+Количество и содержание узлов не ограничено
+Количество дочерних узлов также не ограничено
+Например, есть дерево с роутами main -> additional -> info - ayf, если я введу в роуте localhost:3000/main/additional/info/ayf, но у меня должен открыться самый дочерний узел
+Текущий роутинг сайта строится на актуальных данных о состоянии дерева: узел удален - данного роута нет, а все его дочерние узлы первого уровня становятся дочерними узлами его родительского узла. Основной смысл задания - моментально при совершении каких-либо действий с деревом (удаление узлов, добавление) визуальная составляющая должна меняться, как и роутинг.
+Использовать: react - для пунктов 3-4. react-router - для пунктов 2,5. redux - для всей работы с деревом и его хранения в персисте. scss - для стилей. bem-cn - для БЭМ-а. Любые иные либы, которые могут упростить жизнь, но не делают работу за вас.
+Верстка должна быть адаптивной и респонсив  для мобилки и десктопа.
+Проект создать через create-react-app.
